@@ -1,0 +1,21 @@
+<html><body>
+	{% if edit_obj %}<p><a href="/">Add new</a></p>{% endif %}
+	<h2>{% if edit_obj %}Edit {{edit_obj.name}}{% else %}Add an object{% endif %}</h2>
+	
+	<form id="add_user" action="" method="post">
+		
+		<ul>
+			{{ form.as_ul }}
+			<li>
+				<input type="submit" value="Submit" />
+			</li>
+		</ul>
+		
+	</form>
+	<h2>Current objects:</h2>
+	<ul>
+	{% for t in test_objects %}
+	<li><a href="/?id={{t.pk}}">{{t}}</a></li>
+	{% endfor %}
+	</ul>
+</body></html>
